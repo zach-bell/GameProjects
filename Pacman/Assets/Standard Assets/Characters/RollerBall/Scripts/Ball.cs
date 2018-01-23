@@ -10,8 +10,6 @@ namespace UnityStandardAssets.Vehicles.Ball
         [SerializeField] private float m_MaxAngularVelocity = 25; // The maximum velocity the ball can rotate at.
         [SerializeField] private float m_JumpPower = 2; // The force added to the ball when it jumps.
 
-        [SerializeField] private float downForce = 750; // Downward force added tot he ball for tight controls
-
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
 
@@ -21,11 +19,6 @@ namespace UnityStandardAssets.Vehicles.Ball
             m_Rigidbody = GetComponent<Rigidbody>();
             // Set the maximum angular velocity.
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
-        }
-
-        public void FixedUpdate() {
-
-            m_Rigidbody.AddForce(0, -(downForce * Time.deltaTime), 0);
         }
 
 
@@ -40,7 +33,7 @@ namespace UnityStandardAssets.Vehicles.Ball
             else
             {
                 // Otherwise add force in the move direction.
-                m_Rigidbody.AddForce((moveDirection*m_MovePower) * Time.deltaTime, ForceMode.VelocityChange);
+                m_Rigidbody.AddForce(moveDirection*m_MovePower);
             }
 
             // If on the ground and jump is pressed...
