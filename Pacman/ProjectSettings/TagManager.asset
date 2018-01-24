@@ -7,6 +7,7 @@ TagManager:
   - Ghost
   - level load canvas
   - goal
+  - floor
   layers:
   - Default
   - TransparentFX
