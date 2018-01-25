@@ -12,21 +12,17 @@ public class NavCooker : MonoBehaviour {
     private bool runOneTime = true;
 
     private GameObject[] objectsToNav;
-    
 
-    private void Update() {
-        if (runOneTime) {
-            if (surfaces == null) {
-                objectsToNav = GameObject.FindGameObjectsWithTag(toTag);
-                surfaces = new NavMeshSurface[objectsToNav.Length];
-                for (int i = 0; i < objectsToNav.Length; i++) {
-                    surfaces[i] = objectsToNav[i].GetComponent<NavMeshSurface>();
-                }
+    private void Start() {
+        if (surfaces == null) {
+            objectsToNav = GameObject.FindGameObjectsWithTag(toTag);
+            surfaces = new NavMeshSurface[objectsToNav.Length];
+            for (int i = 0; i < objectsToNav.Length; i++) {
+                surfaces[i] = objectsToNav[i].GetComponent<NavMeshSurface>();
             }
-            for (int i = 0; i < surfaces.Length; i++) {
-                surfaces[i].BuildNavMesh();
-            }
-            runOneTime = false;
+        }
+        for (int i = 0; i < surfaces.Length; i++) {
+            surfaces[i].BuildNavMesh();
         }
     }
 }

@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 331582992}
   - component: {fileID: 331582991}
   - component: {fileID: 331582990}
+  - component: {fileID: 331582993}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -179,13 +180,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 331582988}
-  m_LocalRotation: {x: 0.29119703, y: -0.011480053, z: 0.0034946757, w: 0.95658785}
-  m_LocalPosition: {x: 13.943546, y: 25.481644, z: -25.675362}
+  m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
+  m_LocalPosition: {x: 24.042892, y: 29.395145, z: 18.460861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
 --- !u!81 &331582990
 AudioListener:
   m_ObjectHideFlags: 0
@@ -218,7 +219,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 91.17118
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -236,6 +237,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &331582993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331582988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1952950448e5874391f73a0435d47c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1699097588}
+  playerObject: {fileID: 1699097580}
 --- !u!1 &403522882
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaces: []
   toTag: floor
+  runOneTime: 1
 --- !u!1001 &706068263
 Prefab:
   m_ObjectHideFlags: 0
@@ -367,6 +382,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1699097580 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1821124406899574, guid: f7232201d5b159248a48b6538da77c03,
+    type: 2}
+  m_PrefabInternal: {fileID: 706068263}
+--- !u!4 &1699097588 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4304094129655076, guid: f7232201d5b159248a48b6538da77c03,
+    type: 2}
+  m_PrefabInternal: {fileID: 706068263}
 --- !u!1 &1810352119
 GameObject:
   m_ObjectHideFlags: 0

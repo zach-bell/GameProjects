@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114254059657072262}
   - component: {fileID: 114251335999419080}
   - component: {fileID: 114956366838818416}
+  - component: {fileID: 114751852112508266}
+  - component: {fileID: 114539230322761420}
   m_Layer: 0
   m_Name: Floor
   m_TagString: floor
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344922309209800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 6, y: 0.25, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: -4}
-  m_EndPoint: {x: 0, y: 0, z: -2}
+  m_StartPoint: {x: 0, y: 0.25, z: -3.28}
+  m_EndPoint: {x: 0, y: 0.25, z: -2.72}
   m_Width: 6
   m_CostModifier: -1
   m_Bidirectional: 1
@@ -130,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
   m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 6, y: 5, z: 6}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
@@ -141,10 +143,48 @@ MonoBehaviour:
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
   m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.083333336
+  m_OverrideVoxelSize: 1
+  m_VoxelSize: 0.04
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 63247e1a7ad2ee34f94249fb13ddebe2, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f42a70986028fcf45bac6a7e273e8151, type: 2}
+--- !u!114 &114539230322761420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344922309209800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 3.28, y: 0.25, z: 0}
+  m_EndPoint: {x: 2.72, y: 0.25, z: 0}
+  m_Width: 6
+  m_CostModifier: -1
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 1
+  m_Area: 0
+--- !u!114 &114751852112508266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344922309209800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0.25, z: 3.28}
+  m_EndPoint: {x: 0, y: 0.25, z: 2.72}
+  m_Width: 6
+  m_CostModifier: -1
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 1
+  m_Area: 0
 --- !u!114 &114956366838818416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,8 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_StartPoint: {x: -4, y: 0, z: 0}
-  m_EndPoint: {x: -2, y: 0, z: 0}
+  m_StartPoint: {x: -3.28, y: 0.25, z: 0}
+  m_EndPoint: {x: -2.72, y: 0.25, z: 0}
   m_Width: 6
   m_CostModifier: -1
   m_Bidirectional: 1
