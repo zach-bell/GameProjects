@@ -15,5 +15,8 @@ EditorBuildSettings:
     path: Assets/Levels/Level2.unity
     guid: ef5e3334831fa3c41aa6b9a2241d983c
   - enabled: 1
+    path: Assets/Levels/LevelForever.unity
+    guid: f5cab4a686bcffc468c9bc2a7c4aa1d5
+  - enabled: 1
     path: Assets/Levels/Win.unity
     guid: f1814954068938648837271eb07399a7
