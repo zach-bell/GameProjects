@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1620326437}
-  m_IndirectSpecularColor: {r: 0.024391484, g: 0.014530655, b: 0.016315514, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026670722, g: 0.0023555316, b: 0.0026684413, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 336538717}
   - component: {fileID: 336538718}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LoseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Level 2
+  m_Text: Level Infinity
 --- !u!222 &1856435243
 CanvasRenderer:
   m_ObjectHideFlags: 0

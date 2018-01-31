@@ -8,6 +8,7 @@ TagManager:
   - level load canvas
   - goal
   - floor
+  - wall
   layers:
   - Default
   - TransparentFX

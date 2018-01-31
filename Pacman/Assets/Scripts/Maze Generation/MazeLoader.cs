@@ -16,10 +16,13 @@ public class MazeLoader : MonoBehaviour {
 		MazeAlgorithm ma = new HuntAndKillMazeAlgorithm (mazeCells);
 		ma.CreateMaze ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+
+    public void generateNewMaze() {
+        InitializeMaze();
+
+        MazeAlgorithm ma = new HuntAndKillMazeAlgorithm(mazeCells);
+        ma.CreateMaze();
+    }
 
 	private void InitializeMaze() {
 

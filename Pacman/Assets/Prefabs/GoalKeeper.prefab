@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: {fileID: 114397382882326838}
+  proceedNextLevel: 1
+  runOneTime: 1
 --- !u!224 &224325992047634706
 RectTransform:
   m_ObjectHideFlags: 1
