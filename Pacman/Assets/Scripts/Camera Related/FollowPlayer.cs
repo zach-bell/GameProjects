@@ -1,22 +1,21 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.Vehicles.Ball;
 using UnityEngine.SceneManagement;
 
 public class FollowPlayer : MonoBehaviour {
 
-    public Transform player;
-    private Vector3 startPos;
+	[SerializeField]
+	private Transform player;
+	[SerializeField]
+	private GameObject playerObject;
 
-    public GameObject playerObject;
-    private BallUserControl userControl;
-    private GameObject canvas;
+	private Vector3 startPos;
 
     private void Start() {
         startPos = transform.position;
-        if (playerObject == null)
-            playerObject = GameObject.FindGameObjectWithTag("Player");
-        userControl = playerObject.GetComponent<BallUserControl>();
-        canvas = GameObject.FindGameObjectWithTag("level load canvas");
+		if (playerObject == null) {
+			playerObject = GameObject.FindGameObjectWithTag("Player");
+			player = playerObject.GetComponent<Transform>();
+		}
     }
 
     void Update () {
