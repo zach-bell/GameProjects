@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 public class Ghost : MonoBehaviour {
 
     public GameObject target;
-    public NavMeshAgent agent;
-    public PlayerCollision pCollision;
+	
+    private NavMeshAgent agent;
 	
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -19,9 +17,4 @@ public class Ghost : MonoBehaviour {
         if (agent.isActiveAndEnabled)
             agent.destination = target.transform.position;
 	}
-
-    public void OnCollisionEnter(Collision collision) {
-        
-        //SceneManager.LoadScene("Menu");
-    }
 }

@@ -9,6 +9,7 @@ TagManager:
   - goal
   - floor
   - wall
+  - PointOfInterest
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Env
   - Player
-  - 
+  - Ghosts
   - 
   - 
   - 
