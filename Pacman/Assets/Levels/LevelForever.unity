@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1620326437}
-  m_IndirectSpecularColor: {r: 0.024371047, g: 0.014531381, b: 0.016313225, a: 1}
+  m_IndirectSpecularColor: {r: 0.016418802, g: 0.009645093, b: 0.011034591, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -157,6 +157,11 @@ Prefab:
       propertyPath: loseUI
       value: 
       objectReference: {fileID: 336538712}
+    - target: {fileID: 114528777341525008, guid: f7232201d5b159248a48b6538da77c03,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7232201d5b159248a48b6538da77c03, type: 2}
   m_IsPrefabParent: 0
@@ -491,7 +496,8 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114695913422071030, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &934015951
@@ -681,7 +687,8 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114695913422071030, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1093639309 stripped
@@ -708,7 +715,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
+  seePlayer: 0
   visibleTargets: []
+  multipleChasers: 1
+  Friends: Ghost
+  playerObject: {fileID: 0}
 --- !u!1 &1106898417
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +731,7 @@ GameObject:
   - component: {fileID: 1106898418}
   m_Layer: 0
   m_Name: AIManager
-  m_TagString: Untagged
+  m_TagString: AIManager
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectsToSetTargets: Ghost
-  PointsOfInterest: {fileID: 1066851990900746, guid: 500907aa2dcf09a43a81628c8f97dd81,
+  PointOfInterest: {fileID: 1066851990900746, guid: 500907aa2dcf09a43a81628c8f97dd81,
     type: 2}
   sizeX: 61.7
   sizeZ: 60.5
@@ -1010,7 +1021,8 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114695913422071030, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1148966063 stripped
@@ -1037,7 +1049,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
+  seePlayer: 0
   visibleTargets: []
+  multipleChasers: 1
+  Friends: Ghost
+  playerObject: {fileID: 0}
 --- !u!114 &1205651082 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114931959495812252, guid: f7232201d5b159248a48b6538da77c03,
@@ -1263,7 +1279,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
+  seePlayer: 0
   visibleTargets: []
+  multipleChasers: 1
+  Friends: Ghost
+  playerObject: {fileID: 0}
 --- !u!1 &1716242594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1457,8 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114695913422071030, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1719767066 stripped
@@ -1464,7 +1485,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
+  seePlayer: 0
   visibleTargets: []
+  multipleChasers: 1
+  Friends: Ghost
+  playerObject: {fileID: 0}
 --- !u!1 &1856435240
 GameObject:
   m_ObjectHideFlags: 0
