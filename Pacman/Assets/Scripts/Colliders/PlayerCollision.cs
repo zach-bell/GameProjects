@@ -13,13 +13,16 @@ public class PlayerCollision : MonoBehaviour {
         ghosts = GameObject.FindGameObjectsWithTag("Ghost");
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (collision.collider.tag == "Ghost") {
-            ballUserControl.enabled = false;
-            foreach(GameObject o in ghosts) {
-                o.GetComponent<NavMeshAgent>().enabled = false;
-            }
-            loseUI.SetActive(true);
-        }
-    }
+	void OnCollisionEnter(Collision collision) {
+		if (collision.collider.tag == "Ghost") {
+			ballUserControl.enabled = false;
+			foreach (GameObject o in ghosts) {
+				o.GetComponent<NavMeshAgent>().enabled = false;
+			}
+			loseUI.SetActive(true);
+		}
+		if (collision.collider.tag == "goal") {
+			StaticScript.GameScore ++;
+		}
+	}
 }

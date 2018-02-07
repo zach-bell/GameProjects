@@ -109,4 +109,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 1339348245428394, guid: 9f3671114d7924e48bca3cea1c5a0293, type: 2}
   offset: {x: 0, y: 1, z: 0}
-  percentage: 0.85
+  percentage: 0.95

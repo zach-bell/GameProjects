@@ -5,8 +5,18 @@ using UnityEngine;
 public static class StaticScript {
 
     private static bool ccOff;
+	private static int gameScore = 0;
 
-    public static bool CcOff {
+	public static int GameScore {
+		get {
+			return gameScore;
+		}
+		set {
+			gameScore = value;
+		}
+	}
+
+	public static bool CcOff {
         get {
             return ccOff;
         }

@@ -11,7 +11,7 @@ public class FieldOfView : MonoBehaviour {
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
-	//[HideInInspector]
+	[HideInInspector]
 	public bool seePlayer = false;
 
 	[HideInInspector]
@@ -75,8 +75,9 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 	private float count = 0;
-	public bool care = false;
+	private bool care = false;
 	private float timeToCareFor = 4;
+	private bool runOne = true;
 
 	private void FixedUpdate() {
 		if (seePlayer) {
@@ -89,16 +90,16 @@ public class FieldOfView : MonoBehaviour {
 				Debug.Log("Friends have been alerted");
 			}
 			care = true;
-		} else if (care) {
+		}
+		if (care) {
 			count += Time.deltaTime;
 			if (count >= timeToCareFor) {
 				care = false;
 				count = 0;
 				Debug.Log("I stopped Caring");
+				GameObject.FindGameObjectWithTag("AIManager").GetComponent<CreatPointsInterest>().setTargetsOfInterest();
 				timeToCareFor = Random.Range(3.5f , 8.5f);
 			}
-		} else {
-			GameObject.FindGameObjectWithTag("AIManager").GetComponent<CreatPointsInterest>().setTargetsOfInterest();
 		}
 	}
 }
