@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1620326437}
-  m_IndirectSpecularColor: {r: 0.025627768, g: 0.015488117, b: 0.017423106, a: 1}
+  m_IndirectSpecularColor: {r: 0.021803685, g: 0.012779364, b: 0.014169625, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -299,6 +299,125 @@ Transform:
   m_PrefabParentObject: {fileID: 4436965712364174, guid: f3171c3170575f147ae0436c4591e47d,
     type: 2}
   m_PrefabInternal: {fileID: 626332681}
+--- !u!1 &493668172 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1179602557167780, guid: 4b440ed479ae4a049bd42ae44bab50fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 628559205}
+--- !u!95 &493668173
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 493668172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42178be4bb0caa044b6adf7ecdab611e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &584546298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 584546300}
+  - component: {fileID: 584546299}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &584546299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584546298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc575be17e0e69449f4dfe3bc79614f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: level-load
+    clip: {fileID: 8300000, guid: 7415a3a8921399e43973e74b570562c0, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: alert
+    clip: {fileID: 8300000, guid: 9b81824f46949d74ca6d8558b63f14d6, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: collect
+    clip: {fileID: 8300000, guid: d5c025ac5346adb4dbe4505dc19f0a43, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: lose
+    clip: {fileID: 8300000, guid: d61e0ed2e34d4174eadf55bc9f339f92, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: music-lvl1
+    clip: {fileID: 8300000, guid: 3fe421e4431f2f342a5bfc837ca1796f, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: music-lvl2
+    clip: {fileID: 8300000, guid: b4e3f3653839eb1468ba6cbcbfbfb0fc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: music-club-ambient
+    clip: {fileID: 8300000, guid: c11ff573aac1c3a4687cd69c41f0e6d1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: downlift
+    clip: {fileID: 8300000, guid: c6cf17b1b73129141ac4534c393348df, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: 24300002, guid: 9dcd8e5dc9e865845b2fc1b553f3eb39, type: 2}
+    source: {fileID: 0}
+--- !u!4 &584546300
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584546298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30, y: -0.099999905, z: 28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &626332681
 Prefab:
   m_ObjectHideFlags: 0
@@ -563,10 +682,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224210942288922584, guid: 546647554e3444e4e86e772554a437af,
+    - target: {fileID: 95312642368004466, guid: 546647554e3444e4e86e772554a437af,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 121
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 546647554e3444e4e86e772554a437af, type: 2}
@@ -634,6 +753,11 @@ Prefab:
     - target: {fileID: 1809469283974524, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 195372167065468232, guid: 9ec39542e9f8ae54cbfe2748e7dad668,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 474.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114695913422071030, guid: 9ec39542e9f8ae54cbfe2748e7dad668, type: 2}
@@ -859,6 +983,7 @@ MonoBehaviour:
   multipleChasers: 1
   Friends: Ghost
   playerObject: {fileID: 0}
+  care: 0
 --- !u!1 &1106898417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1318,7 @@ MonoBehaviour:
   multipleChasers: 1
   Friends: Ghost
   playerObject: {fileID: 0}
+  care: 0
 --- !u!114 &1205651082 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114931959495812252, guid: f7232201d5b159248a48b6538da77c03,
@@ -1428,6 +1554,7 @@ MonoBehaviour:
   multipleChasers: 1
   Friends: Ghost
   playerObject: {fileID: 0}
+  care: 0
 --- !u!1 &1716242594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1761,7 @@ MonoBehaviour:
   multipleChasers: 1
   Friends: Ghost
   playerObject: {fileID: 0}
+  care: 0
 --- !u!1 &1856435240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,7 +1883,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1834,6 +1962,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballUserControl: {fileID: 1205651082}
+--- !u!1 &1902772544 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915227454056264, guid: 546647554e3444e4e86e772554a437af,
+    type: 2}
+  m_PrefabInternal: {fileID: 643050242}
+--- !u!114 &1902772548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902772544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020d899cd0d22a24e81b44c2f4f28cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2105212752
 Prefab:
   m_ObjectHideFlags: 0

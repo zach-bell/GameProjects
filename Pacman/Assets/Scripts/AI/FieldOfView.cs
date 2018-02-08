@@ -75,18 +75,18 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 	private float count = 0;
-	private bool care = false;
+	[HideInInspector]
+	public bool care = false;
 	private float timeToCareFor = 4;
-	private bool runOne = true;
 
 	private void FixedUpdate() {
 		if (seePlayer) {
 			count = 0;
 			if (!care) {
-				//play alert sound
 				foreach (GameObject friend in friends) {
 					friend.GetComponent<Ghost>().alert();
 				}
+				FindObjectOfType<AudioManager>().Play("alert");
 				Debug.Log("Friends have been alerted");
 			}
 			care = true;

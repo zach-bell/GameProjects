@@ -13,9 +13,11 @@ public class AudioManager : MonoBehaviour {
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
-        }
+			s.source.loop = s.loop;
+			if (s.audioMixer != null) s.source.outputAudioMixerGroup = s.audioMixer;
+		}
 	}
-
+	
 	public void Play (string name) {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();

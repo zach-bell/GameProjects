@@ -22,4 +22,11 @@ public class LevelLoadAniScript : MonoBehaviour {
             o.GetComponent<NavMeshAgent>().enabled = true;
         }
     }
+
+	public void PlayStartSound() {
+		FindObjectOfType<AudioManager>().Play("level-load");
+	}
+	public void PlayMusic() {
+		FindObjectOfType<AudioManager>().Play("music-club-ambient");
+	}
 }
