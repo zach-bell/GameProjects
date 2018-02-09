@@ -4,17 +4,19 @@ using System;
 
 public class AudioManager : MonoBehaviour {
 
-    public Sound[] sounds;
+	public AudioMixerSnapshot alertedPassMusic;
+	public AudioMixerSnapshot calmPassMusic;
 
+    public Sound[] sounds;
+	
 	void Awake () {
         foreach (Sound s in sounds) {
             s.source = gameObject.AddComponent<AudioSource>();
-
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
 			s.source.loop = s.loop;
-			if (s.audioMixer != null) s.source.outputAudioMixerGroup = s.audioMixer;
+			s.source.outputAudioMixerGroup = s.audioMixer;
 		}
 	}
 	
@@ -22,4 +24,24 @@ public class AudioManager : MonoBehaviour {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
+	public void Play(string name, float pitch) {
+		Sound s = Array.Find(sounds, sound => sound.name == name);
+		s.source.pitch = pitch;
+		s.source.Play();
+		s.source.pitch = s.pitch;
+	}
+
+	public void Stop(string name) {
+		Sound s = Array.Find(sounds, sound => sound.name == name);
+		s.source.Stop();
+	}
+
+	public void changeSnapshot(bool alerted) {
+		if (alerted) {
+			alertedPassMusic.TransitionTo(5.5f);
+		} else {
+			calmPassMusic.TransitionTo(2.5f);
+		}
+	}
 }

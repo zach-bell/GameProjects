@@ -11,6 +11,9 @@ public class GoalKeeping : MonoBehaviour {
     public bool runOneTime = true;
 	public GameObject MazeLoader;
 
+	[SerializeField]
+	private GameObject ScreenFlashPrefab;
+
     public void repopulate() {
         goals = GameObject.FindGameObjectsWithTag("goal");
     }
@@ -52,6 +55,8 @@ public class GoalKeeping : MonoBehaviour {
         }
 		if (!count & !proceedNextLevel & !waiting) {
 			regenerateLevel();
+			Instantiate(ScreenFlashPrefab);
+			FindObjectOfType<AudioManager>().Play("downlift");
 		}
 		
 	}

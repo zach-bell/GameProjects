@@ -19,11 +19,12 @@ public class PlayerCollision : MonoBehaviour {
 			foreach (GameObject o in ghosts) {
 				o.GetComponent<NavMeshAgent>().enabled = false;
 			}
+			FindObjectOfType<AudioManager>().Stop("music-club-ambient");
 			FindObjectOfType<AudioManager>().Play("lose");
 			loseUI.SetActive(true);
 		}
 		if (collision.collider.tag == "goal") {
-			FindObjectOfType<AudioManager>().Play("collect");
+			FindObjectOfType<AudioManager>().Play("collect",Random.Range(0.65f,1.30f));
 			StaticScript.GameScore ++;
 		}
 	}

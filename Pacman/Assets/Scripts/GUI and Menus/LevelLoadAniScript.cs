@@ -26,7 +26,17 @@ public class LevelLoadAniScript : MonoBehaviour {
 	public void PlayStartSound() {
 		FindObjectOfType<AudioManager>().Play("level-load");
 	}
-	public void PlayMusic() {
-		FindObjectOfType<AudioManager>().Play("music-club-ambient");
+	public void PlayMusic(int level) {
+		switch (level) {
+		case 1:
+			FindObjectOfType<AudioManager>().Play("music-lvl1");
+			break;
+		case 2:
+			FindObjectOfType<AudioManager>().Play("music-lvl2");
+			break;
+		case 0:
+			FindObjectOfType<AudioManager>().Play("music-club-ambient");
+			break;
+		}
 	}
 }

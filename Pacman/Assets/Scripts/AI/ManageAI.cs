@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ManageAI : MonoBehaviour {
 
@@ -7,10 +9,10 @@ public class ManageAI : MonoBehaviour {
 
 	private GameObject[] myObjects;
 
-	[HideInInspector]
-	public bool alerted;
+	[SerializeField]
+	private Text AlertText;
 
-	private bool areAnyofThemAlerted = false;
+	private bool alerted;
 
 	void Start () {
 		myObjects = GameObject.FindGameObjectsWithTag(ObjectsToManage);
@@ -19,20 +21,29 @@ public class ManageAI : MonoBehaviour {
 	private bool oneTime = true;
 
 	void Update () {
-		areAnyofThemAlerted = false;
-		foreach(GameObject thing in myObjects) {
-			areAnyofThemAlerted = thing.GetComponent<FieldOfView>().care;
-		}
-		if (areAnyofThemAlerted) {
-			alerted = true;
+		if (alerted) {
 			if (oneTime) {
 				FindObjectOfType<AudioManager>().Play("alert");
 				Debug.Log("alert sound played");
+				foreach (GameObject basicallyTheGhosts in myObjects) {
+					basicallyTheGhosts.GetComponent<Ghost>().alert();
+				}
+				Debug.Log("Friends have been alerted");
 				oneTime = false;
 			}
-		} else {
-			alerted = false;
-			oneTime = true;
-		}
+		} else oneTime = true;
+	}
+
+	public void Alert() {
+		alerted = true;
+		FindObjectOfType<AudioManager>().changeSnapshot(true);
+		AlertText.text = "Alerted!!";
+	}
+
+	public void ChillOut() {
+		alerted = false;
+		FindObjectOfType<AudioManager>().changeSnapshot(false);
+		GetComponent<CreatPointsInterest>().setTargetsOfInterest();
+		AlertText.text = "";
 	}
 }

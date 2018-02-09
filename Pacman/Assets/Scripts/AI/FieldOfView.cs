@@ -17,19 +17,14 @@ public class FieldOfView : MonoBehaviour {
 	[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
 
+	public GameObject AIManager;
+
 	[Header("Set my friends to help!")]
 	public bool multipleChasers = true;
-	[TagSelector]
-	public string Friends = "";
-	private GameObject[] friends;
-
-	public GameObject playerObject;
 
 	private void Start() {
 		StartCoroutine("FindTargetsWithDelay", 0.1f);
-		if (playerObject == null)
-			playerObject = GameObject.FindGameObjectWithTag("Player");
-		if (multipleChasers) friends = GameObject.FindGameObjectsWithTag(Friends);
+		if (AIManager == null) AIManager = GameObject.FindGameObjectWithTag("AIManager");
 	}
 
 	IEnumerator FindTargetsWithDelay(float delay) {
@@ -70,10 +65,6 @@ public class FieldOfView : MonoBehaviour {
 		return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad),0,Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
 	}
 
-	public void setTargetPlayer() {
-		GetComponent<Ghost>().target = playerObject;
-	}
-
 	private float count = 0;
 	[HideInInspector]
 	public bool care = false;
@@ -83,10 +74,7 @@ public class FieldOfView : MonoBehaviour {
 		if (seePlayer) {
 			count = 0;
 			if (!care) {
-				foreach (GameObject friend in friends) {
-					friend.GetComponent<Ghost>().alert();
-				}
-				Debug.Log("Friends have been alerted");
+				AIManager.GetComponent<ManageAI>().Alert();
 			}
 			care = true;
 		}
@@ -95,8 +83,8 @@ public class FieldOfView : MonoBehaviour {
 			if (count >= timeToCareFor) {
 				care = false;
 				count = 0;
-				Debug.Log("I stopped Caring");
-				GameObject.FindGameObjectWithTag("AIManager").GetComponent<CreatPointsInterest>().setTargetsOfInterest();
+				Debug.Log(this.name + " stopped Caring");
+				AIManager.GetComponent<ManageAI>().ChillOut();
 				timeToCareFor = Random.Range(3.5f , 8.5f);
 			}
 		}
