@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1620326437}
-  m_IndirectSpecularColor: {r: 0.021803685, g: 0.012779364, b: 0.014169625, a: 1}
+  m_IndirectSpecularColor: {r: 0.026314333, g: 0.015941797, b: 0.0179298, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -165,6 +165,11 @@ Prefab:
     - target: {fileID: 4712168152861982, guid: f7232201d5b159248a48b6538da77c03, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931959495812252, guid: f7232201d5b159248a48b6538da77c03,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7232201d5b159248a48b6538da77c03, type: 2}
@@ -687,6 +692,61 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114292179141616428, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224676054406342598, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.38410625
+      objectReference: {fileID: 0}
+    - target: {fileID: 224676054406342598, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 224676054406342598, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1556
+      objectReference: {fileID: 0}
+    - target: {fileID: 114292179141616428, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224676054406342598, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.48403785
+      objectReference: {fileID: 0}
+    - target: {fileID: 224676054406342598, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.09135181
+      objectReference: {fileID: 0}
+    - target: {fileID: 224210942288922584, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 224210942288922584, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224210942288922584, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224210942288922584, guid: 546647554e3444e4e86e772554a437af,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 546647554e3444e4e86e772554a437af, type: 2}
   m_IsPrefabParent: 0
@@ -993,6 +1053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1106898419}
   - component: {fileID: 1106898418}
+  - component: {fileID: 1106898420}
   m_Layer: 0
   m_Name: AIManager
   m_TagString: AIManager
@@ -1029,6 +1090,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106898420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106898417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6418c81c37ed32f49b63f4de0a42315a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsToManage: Ghost
+  alerted: 0
 --- !u!1 &1121886572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1888667304
 MonoBehaviour:
   m_ObjectHideFlags: 0

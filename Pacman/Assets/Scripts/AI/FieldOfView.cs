@@ -86,7 +86,6 @@ public class FieldOfView : MonoBehaviour {
 				foreach (GameObject friend in friends) {
 					friend.GetComponent<Ghost>().alert();
 				}
-				FindObjectOfType<AudioManager>().Play("alert");
 				Debug.Log("Friends have been alerted");
 			}
 			care = true;
