@@ -30,9 +30,30 @@ public class ControllerScript : MonoBehaviour {
 			if ((Input.GetAxis("Vertical") == 0f) && (Input.GetAxis("Horizontal") == 0f)) {
 				animator.SetBool("TurnRight", true);
 			}
-		}
-		else {
+		} else {
 			animator.SetBool("TurnRight", false);
+		}
+		if (Input.GetKeyDown("1")) {
+			if (animator.GetInteger("CurrentAction") == 0) {
+				animator.SetInteger("CurrentAction", 1);
+			} else if (animator.GetInteger("CurrentAction") == 1) {
+				animator.SetInteger("CurrentAction", 0);
+			}
+		}
+		if (Input.GetKeyDown("2")) {
+			if (animator.GetInteger("CurrentAction") == 0) {
+				animator.SetInteger("CurrentAction", 2);
+			}
+			else if (animator.GetInteger("CurrentAction") == 2) {
+				animator.SetInteger("CurrentAction", 0);
+			}
+		}
+		if (Input.GetKeyDown("3")) {
+			animator.SetLayerWeight(1, 1f);
+			animator.SetInteger("CurrentAction", 3);
+		}
+		if (Input.GetKeyUp("3")) {
+			animator.SetInteger("CurrentAction", 0);
 		}
 	}
 
