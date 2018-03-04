@@ -103,7 +103,7 @@ namespace UnityEngine.PostProcessing
                         baseTex.width, baseTex.height, 0, rtFormat
                         );
 
-                Graphics.Blit(last, m_BlurBuffer2[level], material, 3);
+                Graphics.Blit(last, m_BlurBuffer2[level], material, 1);
                 last = m_BlurBuffer2[level];
             }
 
