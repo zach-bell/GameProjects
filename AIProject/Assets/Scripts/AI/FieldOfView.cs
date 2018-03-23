@@ -19,9 +19,6 @@ public class FieldOfView : MonoBehaviour {
 
 	public GameObject AIManager;
 
-	[Header("Set my friends to help!")]
-	public bool multipleChasers = true;
-
 	private void Start() {
 		StartCoroutine("FindTargetsWithDelay", 0.1f);
 		if (AIManager == null) AIManager = GameObject.FindGameObjectWithTag("AIManager");
@@ -36,6 +33,8 @@ public class FieldOfView : MonoBehaviour {
 
 	private bool seePlayerOneTime = true;
 
+	private float foreverCount = 0f;
+
 	void FindVisibleTargets() {
 		visibleTargets.Clear();
 		Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
@@ -48,7 +47,6 @@ public class FieldOfView : MonoBehaviour {
 					visibleTargets.Add(target);
 					if (seePlayerOneTime) {
 						seePlayer = true;
-						// Alert other AI
 						seePlayerOneTime = false;
 					}
 				}
@@ -56,6 +54,11 @@ public class FieldOfView : MonoBehaviour {
 				seePlayer = false;
 				seePlayerOneTime = true;
 			}
+		}
+		foreverCount += Time.deltaTime;
+		if (foreverCount >= 4) {
+			seePlayer = false;
+			foreverCount = 0;
 		}
 	}
 
@@ -74,7 +77,7 @@ public class FieldOfView : MonoBehaviour {
 		if (seePlayer) {
 			count = 0;
 			if (!care) {
-				// still alert other AI
+				AIManager.GetComponent<ManageAI>().Alert();
 			}
 			care = true;
 		}
@@ -83,8 +86,9 @@ public class FieldOfView : MonoBehaviour {
 			if (count >= timeToCareFor) {
 				care = false;
 				count = 0;
+				GetComponent<AIController>().isAlerted = false;
 				Debug.Log(this.name + " stopped Caring");
-				// Stop alert
+				AIManager.GetComponent<ManageAI>().ChillOut();
 				timeToCareFor = Random.Range(3.5f , 8.5f);
 			}
 		}

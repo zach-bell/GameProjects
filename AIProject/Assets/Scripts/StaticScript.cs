@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public static  class StaticScript {
 
-	private static bool flashLight;
+	private static PostProcessingProfile profile;
 
-	public static bool FlashLight {
+	public static PostProcessingProfile Profile {
 		get {
-			return flashLight;
+			return profile;
 		}
 		set {
-			flashLight = value;
+			profile = value;
 		}
 	}
 }

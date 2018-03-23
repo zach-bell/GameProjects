@@ -30,7 +30,6 @@ public class Controller : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController>();
-		StaticScript.FlashLight = true;
 	}
 
 	private bool lockIt = true;
@@ -38,11 +37,9 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.F)) {
 			if (lockIt) {
-				if (StaticScript.FlashLight) {
-					StaticScript.FlashLight = false;
+				if (flashLight.enabled) {
 					flashLight.enabled = false;
 				} else {
-					StaticScript.FlashLight = true;
 					flashLight.enabled = true;
 				}
 				lockIt = false;

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class ThirdPersonCam : MonoBehaviour {
 
@@ -26,6 +27,8 @@ public class ThirdPersonCam : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
+		if (StaticScript.Profile != null)
+			GetComponent<PostProcessingBehaviour>().profile = StaticScript.Profile;
 	}
 	
 	void LateUpdate () {

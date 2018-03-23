@@ -55,9 +55,11 @@ public class SettingsMenu : MonoBehaviour {
 			switch (qualityIndex) {
 			case 0:
 				cameraBehaviour.profile = HQProfile;
+				StaticScript.Profile = HQProfile;
 				break;
 			case 1:
 				cameraBehaviour.profile = LQProfile;
+				StaticScript.Profile = LQProfile;
 				break;
 			}
 		}

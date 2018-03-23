@@ -9,9 +9,13 @@ public class Sound {
     public AudioClip clip;
 
     [Range(0, 1)]
-    public float volume;
+    public float volume = 0.8f;
     [Range(0.1f, 3)]
-    public float pitch;
+    public float pitch = 1;
+
+	public bool loop = false;
+
+	public AudioMixerGroup audioMixer;
 
     [HideInInspector]
     public AudioSource source;
