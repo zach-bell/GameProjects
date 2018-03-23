@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Preloader.unity
-  - enabled: 0
-    path: Assets/Scenes/UnityLabs01.unity
   - enabled: 1
-    path: Assets/Scenes/TheLabs.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: a5d7469b9b0bfb544959de345b128470
+  - enabled: 1
+    path: Assets/Scenes/MainRoom.unity
+    guid: 0cce121e53d2a39488b5d7257bbe5f43

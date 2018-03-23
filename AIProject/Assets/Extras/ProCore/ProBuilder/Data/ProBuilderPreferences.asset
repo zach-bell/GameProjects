@@ -34,6 +34,8 @@ MonoBehaviour:
   - pbVertexColorPrefs1
   - pbVertexColorPrefs3
   - pbVertexColorPrefs4
+  - pbVertexColorPrefs5
+  - pbVertexColorPrefs8
   m_Color_keys: []
   m_Material_keys:
   - pbDefaultMaterial
@@ -48,6 +50,8 @@ MonoBehaviour:
   - RGBA(0.773, 0.682, 0.682, 1.000)
   - RGBA(0.912, 0.878, 0.489, 1.000)
   - RGBA(1.000, 0.472, 0.382, 1.000)
+  - RGBA(0.594, 0.422, 0.684, 1.000)
+  - RGBA(0.173, 0.225, 0.757, 1.000)
   m_Color_values: []
   m_Material_values:
   - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}

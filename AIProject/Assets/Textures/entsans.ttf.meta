@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e5e087a03f6895f40a770d8fe0a7c4c8
+timeCreated: 1521436839
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Enter Sansman
+  fontNames:
+  - Enter Sansman
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,13 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Carpet
-  - Glass
-  - MetalHeavy
-  - MetalLight
-  - Rubber
-  - BuddyBot
-  - HUD
+  - Environment
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -23,8 +18,8 @@ TagManager:
   - DynamicObjects
   - LightingHidden
   - 
-  - 
-  - 
+  - Obstacle
+  - Player
   - 
   - 
   - 

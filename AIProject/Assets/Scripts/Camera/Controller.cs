@@ -3,6 +3,7 @@
 public class Controller : MonoBehaviour {
 
 	public float walkSpeed = 4;
+	public float runSpeed = 6;
 	public float gravity = -12;
 	[Range(0,1)]
 	public float airControlPercent;
@@ -22,20 +23,43 @@ public class Controller : MonoBehaviour {
 	Transform cameraT;
 	CharacterController controller;
 
+	[SerializeField]
+	private Light flashLight;
+
 	void Start () {
 		animator = GetComponent<Animator>();
 		cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController>();
+		StaticScript.FlashLight = true;
 	}
-	
+
+	private bool lockIt = true;
+
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.F)) {
+			if (lockIt) {
+				if (StaticScript.FlashLight) {
+					StaticScript.FlashLight = false;
+					flashLight.enabled = false;
+				} else {
+					StaticScript.FlashLight = true;
+					flashLight.enabled = true;
+				}
+				lockIt = false;
+			}
+		}
+		else {
+			lockIt = true;
+		}
+
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		Vector2 inputDir = input.normalized;
 		bool running = Input.GetKey(KeyCode.LeftShift);
 
 		Move(inputDir, running);
 
-		animationSpeedPercent = (currentSpeed / walkSpeed);
+		animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * 0.5f);
+		//animationSpeedPercent = (currentSpeed / walkSpeed);
 		animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
 	}
 
@@ -44,7 +68,9 @@ public class Controller : MonoBehaviour {
 			float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
 			transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, GetModifiedSmoothTime(turnSmoothTime));
 		}
-		float targetSpeed = walkSpeed * inputDir.magnitude;
+		// float targetSpeed = walkSpeed * inputDir.magnitude;
+		float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
+
 		currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
 		velocityY += Time.deltaTime * gravity;

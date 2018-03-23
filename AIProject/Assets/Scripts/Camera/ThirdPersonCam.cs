@@ -27,21 +27,8 @@ public class ThirdPersonCam : MonoBehaviour {
 			Cursor.visible = false;
 		}
 	}
-	private bool lockIt = true;
+	
 	void LateUpdate () {
-		if (Input.GetKeyDown(KeyCode.F)) {
-			if (lockIt) {
-				if (StaticScript.FlashLight) {
-					StaticScript.FlashLight = false;
-				} else {
-					StaticScript.FlashLight = true;
-				}
-				lockIt = false;
-			}
-		} else {
-			lockIt = true;
-		}
-		
 		yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 		pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 		pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
